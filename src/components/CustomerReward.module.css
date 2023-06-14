@@ -1,0 +1,14 @@
+.customerRewards {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .monthlyRewards {
+    margin-top: 10px;
+  }
+  
+  .totalRewards {
+    font-weight: bold;
+  }
