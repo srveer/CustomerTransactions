@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import RewardPointsCalculator from './RewardPointsCalculator';
+import RewardPointsCalculator from '../RewardPointsCalculator';
 import { act } from "react-dom/test-utils";
 
 
@@ -26,16 +26,16 @@ describe('RewardPointsCalculator', () => {
     act(() => {
       jest.advanceTimersByTime(5000);
     });
-    const customerElement1 = screen.getByText(/Customer ID: CUST001/i);
+    const customerElement1 = screen.getByText(/CUST001/i);
     expect(customerElement1).toBeInTheDocument();
 
-    const totalRewardsElement1 = screen.getByText(/Total Rewards: 390 points/i);
+    const totalRewardsElement1 = screen.getByText(/390/i);
     expect(totalRewardsElement1).toBeInTheDocument();
 
-    const customerElement2 = screen.getByText(/Customer ID: CUST002/i);
+    const customerElement2 = screen.getByText(/CUST002/i);
     expect(customerElement2).toBeInTheDocument();
 
-    const totalRewardsElement2 = screen.getByText(/Total Rewards: 55 points/i);
+    const totalRewardsElement2 = screen.getByText(/55/i);
     expect(totalRewardsElement2).toBeInTheDocument();
   });
 });

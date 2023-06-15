@@ -1,0 +1,48 @@
+ .customerRewards {
+   padding: 10px;
+ }
+
+ .spacer {
+   margin: 10px 0px;
+ }
+
+ .monthlyRewards {
+   margin-top: 10px;
+ }
+
+ .totalRewards {
+   font-weight: bold;
+ }
+
+ .styledTable {
+   width: 100%;
+   border-collapse: collapse;
+   margin: 5px 0;
+   font-size: 0.9em;
+   font-family: sans-serif;
+   min-width: 400px;
+   box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+ }
+
+ .bBorder {
+   border-bottom: 1px solid #ccc;
+ }
+
+ th {
+   font-size: 20px;
+ }
+
+ th,
+ td {
+   padding: 10px;
+ }
+
+ .container {
+  text-align: center;
+}
+
+.title {
+  font-size: 24px;
+  text-decoration: underline;
+  margin-bottom: 20px;
+}

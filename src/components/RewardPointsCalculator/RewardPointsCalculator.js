@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import transactions from '../data/transactions';
-import CustomerRewards from './CustomerRewards';
+import transactions from '../../data/transactions';
+import CustomerRewards from '../CustomerRewards/CustomerRewards';
 import styles from './RewardPointsCalculator.module.css';
-
 const RewardPointsCalculator = () => {
   const [transactionData, setTransactionData] = useState([]);
 
@@ -36,7 +35,7 @@ const RewardPointsCalculator = () => {
     const rewardsByCustomer = {};
 
     transactions.forEach((transaction) => {
-      const { customerId, amount, date } = transaction;
+      const { customerId, name, amount, date } = transaction;
       const month = getMonthFromDate(date);
       const points = calculatePoints(amount);
 
@@ -50,7 +49,7 @@ const RewardPointsCalculator = () => {
       if (!rewardsByCustomer[customerId].monthly[month]) {
         rewardsByCustomer[customerId].monthly[month] = 0;
       }
-
+      rewardsByCustomer[customerId].name = name;
       rewardsByCustomer[customerId].total += points;
       rewardsByCustomer[customerId].monthly[month] += points;
     });
@@ -65,14 +64,26 @@ const RewardPointsCalculator = () => {
       <h1 className={styles.title}>Reward Points Calculator</h1>
       {transactionData.length > 0 ? (
         <div>
-          {Object.keys(rewardsByCustomer).map((customerId) => (
-            <CustomerRewards
-              key={customerId}
-              customerId={customerId}
-              monthlyRewards={rewardsByCustomer[customerId].monthly}
-              totalRewards={rewardsByCustomer[customerId].total}
-            />
-          ))}
+          <table className={styles.styledTable}>
+            <thead>
+              <tr>
+                <th align='left'>ID</th>
+                <th align='left'>Name</th>
+                <th align='right'>Total Points</th>
+              </tr>
+            </thead>
+            <tbody>
+              {Object.keys(rewardsByCustomer).map((customerId) => (
+                <CustomerRewards
+                  key={customerId}
+                  name={rewardsByCustomer[customerId].name}
+                  customerId={customerId}
+                  monthlyRewards={rewardsByCustomer[customerId].monthly}
+                  totalRewards={rewardsByCustomer[customerId].total}
+                />
+              ))}
+            </tbody>
+          </table>
         </div>
       ) : (
         <p>Loading transaction data...</p>
