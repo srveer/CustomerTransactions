@@ -1,5 +1,5 @@
 import React from 'react';
-import RewardPointsCalculator from './components/RewardPointsCalculator';
+import RewardPointsCalculator from './components/RewardPointsCalculator/RewardPointsCalculator';
 
 const App = () => {
   return (
