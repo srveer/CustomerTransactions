@@ -8,12 +8,12 @@
   margin-bottom: 20px;
 }
 
- .styledTable {
-   width: 100%;
+.styledTable {
+   width: 50%;
    border-collapse: collapse;
-   margin: 5px 0;
+   margin: auto;
    font-size: 0.9em;
    font-family: sans-serif;
    min-width: 400px;
    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
- }
+}
